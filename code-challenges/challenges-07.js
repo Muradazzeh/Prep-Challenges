@@ -103,7 +103,7 @@ const cvFormatter = (arr) => {
                 newarr.push(x);
             } else {
                 let x = {
-                    fullName: obj.firstName+" "+obj.lastName,
+                    fullName: obj.firstName + " " + obj.lastName,
                     tech: obj.tech
                 }
 
@@ -141,8 +141,37 @@ const cvFormatter = (arr) => {
 //  1- rejectedApplicants are applications that has both the names empty or null and whoever have one year or less of Experience
 
 const applicationsStatics = (arr) => {
-    // write your code here
+    let result = {
+        python_devs: 0,
+        javaScript_devs: 0,
+        dotNet_devs: 0,
+        java_devs: 0,
+        totalApplicants: 0,
+        rejectedApplicants: 0,
+    }
+    for (const app of arr) {
+        if ((app.firstName == "" || app.firstName == null) && (app.lastName == "" || app.lastName == null) && app.yearsOfExperience <= 1) {
+            result.rejectedApplicants += 1
+       
+        } 
+         if (app.tech == "python") {
+            result.python_devs += 1
+
+        } else if (app.tech == "Java") {
+            result.java_devs += 1;
+
+        } else if (app.tech == ".Net") {
+            result.dotNet_devs += 1
+        } else  if (app.tech == "JS") {
+            result.javaScript_devs += 1;
+
+        }
+    }
+    result.totalApplicants=arr.length
+
+    return result;
 };
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
