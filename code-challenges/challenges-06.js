@@ -56,11 +56,16 @@ const sumNums = (arr)=>{
 //  Write a function that takes an array and returns the array reversed
 //  without using built-in functions
 //  
+//          0      1    2      3       length =4
 // Input: ['C#', 'JS', 'Ruby','Python'] 
 // Output: ['Python','Ruby','JS','C#']
 
 const reverseArray = (arr)=>{
-    // write your code here
+    let newArr=[];
+    for(var i=arr.length -1 ;i>=0;i--){
+        newArr.push(arr[i]);
+    }
+    return newArr;
 }
 // -------------------------------------------------------------------------------------------------------
 
