@@ -22,9 +22,9 @@
 
 const objLat = (obj) => {
     // write your code here
-  
-    return `my name is ${obj.firstName.charAt(0).toUpperCase()+obj.firstName.slice(1)} ${obj.lastName.charAt(0).toUpperCase()+obj.lastName.slice(1)} I am ${obj.age} YO, and I love ${obj.hobby}.` 
-    ;
+
+    return `my name is ${obj.firstName.charAt(0).toUpperCase() + obj.firstName.slice(1)} ${obj.lastName.charAt(0).toUpperCase() + obj.lastName.slice(1)} I am ${obj.age} YO, and I love ${obj.hobby}.`
+        ;
 }
 
 
@@ -91,7 +91,31 @@ const objLat = (obj) => {
 //  2- If one of the names is null don`t add it to the full name
 
 const cvFormatter = (arr) => {
-    // write your code here
+    let newarr = []
+    for (const obj of arr) {
+        if (obj.yearsOfExperience > 1) {
+            if (obj.lastName == null) {
+                let x = {
+                    fullName: obj.firstName,
+                    tech: obj.tech
+                }
+
+                newarr.push(x);
+            } else {
+                let x = {
+                    fullName: obj.firstName+" "+obj.lastName,
+                    tech: obj.tech
+                }
+
+                newarr.push(x);
+
+            }
+
+
+        }
+    }
+
+    return newarr;
 };
 // -------------------------------------------------------------------------------------------------------
 
