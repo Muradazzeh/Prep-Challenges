@@ -86,7 +86,8 @@ const replaceWords = (str) => {
 //
 
 const arrToStr = (arr) => {
-    // write your code here
+    arr[4]=arr[4]+","
+    return arr.join(" ") 
 }
 // -------------------------------------------------------------------------------------------------------
 
