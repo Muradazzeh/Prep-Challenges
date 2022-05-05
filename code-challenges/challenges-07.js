@@ -201,6 +201,20 @@ let data = {
                 },
                 {
                     avg: 0,
+                    classNumber: "01",
+                    classScores: [
+                        89, 87, 45, 48, 89, 65, 21, 54, 78, 62, 51, 54, 50, 49
+                    ]
+                },
+                {
+                    avg: 0,
+                    classNumber: "01",
+                    classScores: [
+                        89, 87, 45, 48, 89, 65, 21, 54, 78, 62, 51, 54, 50, 49
+                    ]
+                },
+                {
+                    avg: 0,
                     classNumber: "02",
                     classScores: [
                         87, 54, 95, 45, 41, 51, 25, 63, 58, 47, 64, 51, 98, 100
@@ -297,7 +311,24 @@ let data = {
 //  2- You need to round the average to the nearest lower number 
 
 const classesAvg = (data) => {
-    // write your code here
+   for (let i = 0; i < data.grades.length; i++) {
+       const grade = data.grades[i];
+       for (let j = 0; j < grade.classes.length; j++) {
+           const clase = grade.classes[j];
+           clase.avg=calcAvg(clase.classScores)
+       }
+       
+   }
+
+   function calcAvg (arr){
+       let avg=  arr.reduce((a,b)=>{
+           return a+b
+       },0)/arr.length;
+
+       return Math.floor(avg);
+   }
+
+   return data
 };
 // -------------------------------------------------------------------------------------------------------
 
