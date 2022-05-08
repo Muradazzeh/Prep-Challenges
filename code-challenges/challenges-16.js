@@ -50,15 +50,15 @@ const detectFace = (arr) => {
 // Ex :-
 // Input <= "coding" output =>"cdn"
 
-// const eveCharacter = (str) => {
-//     let result=""
-//     for (const value of str ){
-//         if ( value.lastIndexOf("")!=-1){
-//             result+=value
-//         } 
-//     } 
-//     return result
-// }
+const eveCharacter = (str) => {
+    // let result=""
+    // for (const value of str ){
+    //     if ( value.lastIndexOf("")!=-1){
+    //         result+=value
+    //     } 
+    // } 
+    // return result
+}
 
 // -------------------------------------------------------------------------------------------------------
 
