@@ -13,25 +13,29 @@
 // Input: 50, 9
 // Output: [50, 41, 32, 23, 14, 5, -4, 5, 14, 23, 32, 41, 50]
 //
-let arr1 = []
+
 
 const recursionPattern = (int1, int2) => {
+    let arr1 = []
+    return recursionPattern1(int1, int2)
+    function recursionPattern1(int1, int2){
 
-   arr1.push(int1)
-    if(int1-int2>0){
-        recursionPattern(int1-int2,int2)
         arr1.push(int1)
-    } else{
-        arr1.push(int1-int2)
-        arr1.push(int1)
-    } 
-   
-if(arr1[0]==arr1[arr1.length-1]){
-    return arr1;
+        if (int1 - int2 > 0) {
+            recursionPattern1(int1 - int2, int2)
+            arr1.push(int1)
+        } else {
+            arr1.push(int1 - int2)
+            arr1.push(int1)
+        }
+    
+        if (arr1[0] == arr1[arr1.length - 1]) {
+            return arr1;
+        }
+    
+        else { int1 + int2 }
+    }
 }
-
-else{int1+int2}
-} 
 
 // -------------------------------------------------------------------------------------------------------
 
@@ -48,11 +52,11 @@ else{int1+int2}
 // Note:
 //  Assume that links end with .com, .org or .net
 // 
-let newStr="";
+let newStr = "";
 const filterLinks = (str) => {
-  let regEx=/www.[a-zA-Z]{1,256}.(com|org|net)/gi
-newStr=str.match(regEx).join(" ")
-return newStr
+    let regEx = /www\.[a-zA-Z]{1,256}\.(com|org|net)/gi
+    newStr = str.match(regEx).join(" ")
+    return newStr
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -72,10 +76,10 @@ return newStr
 
 const isPalindrome = (str) => {
     let regex = /[^A-Za-z0-9]/g;
-   let newStr = str.toLowerCase().replace(regex, "");
-    return (newStr===newStr.split("").reverse().join(""))?  true : false
-    
-   
+    let newStr = str.toLowerCase().replace(regex, "");
+    return (newStr === newStr.split("").reverse().join("")) ? true : false
+
+
 
 }
 // -------------------------------------------------------------------------------------------------------
